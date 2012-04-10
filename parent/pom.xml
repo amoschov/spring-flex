@@ -73,15 +73,15 @@
 
     <distributionManagement>
         <repository>
-            <id>spring-release</id>
-            <name>Codeoscopic Spring Release Repository</name>
-            <url>http://maven.codeoscopic.com/content/repositories/spring-release</url>
+            <id>spring-flex-release</id>
+            <name>Spring Flex Releases</name>
+            <url>http://maven.codeoscopic.com/content/repositories/spring-flex-release</url>
         </repository>
 
         <snapshotRepository>
-            <id>spring-snapshot</id>
-            <name>Codeoscopic Spring Snapshot Repository</name>
-            <url>http://maven.codeoscopic.com/content/repositories/spring-snapshot</url>
+            <id>spring-flex-snapshot</id>
+            <name>Spring Flex Snapshots</name>
+            <url>http://maven.codeoscopic.com/content/repositories/spring-flex-snapshot</url>
         </snapshotRepository>
     </distributionManagement>
 

@@ -1,2 +1,4 @@
 .idea
-/target/*
+*/target/*
+spring-flex-integration/src/main/webapp/WEB-INF/*
+spring-flex-samples/spring-flex-testdrive/*/target/*
