@@ -2,24 +2,19 @@ package org.springframework.flex.core.io.domain;
 
 import java.util.Set;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Building {
-	
+
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-	
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
+
 	@Embedded
 	private EmbeddedAddress address;
-	
-	@SuppressWarnings("deprecation")
-    @org.hibernate.annotations.CollectionOfElements
+
+	@ElementCollection
 	private Set<EmbeddedFloor> floors;
 
 	public Integer getId() {
@@ -38,12 +33,12 @@ public class Building {
 		this.address = address;
 	}
 
-    public void setFloors(Set<EmbeddedFloor> floors) {
-        this.floors = floors;
-    }
+	public void setFloors(Set<EmbeddedFloor> floors) {
+		this.floors = floors;
+	}
 
-    public Set<EmbeddedFloor> getFloors() {
-        return floors;
-    }
-	
+	public Set<EmbeddedFloor> getFloors() {
+		return floors;
+	}
+
 }

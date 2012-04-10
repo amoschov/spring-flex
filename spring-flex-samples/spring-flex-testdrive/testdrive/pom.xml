@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.flex.samples</groupId>
 		<artifactId>spring-flex-testdrive</artifactId>
-		<version>1.5.3.BUILD-SNAPSHOT</version>
+        <version>1.5.2-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>testdrive</artifactId>
@@ -61,10 +61,10 @@
 			<groupId>org.springframework.integration</groupId>
 			<artifactId>spring-integration-core</artifactId>
 		</dependency>
-		<dependency>
+		<!--<dependency>
 			<groupId>org.springframework.flex</groupId>
 			<artifactId>spring-flex-core</artifactId>
-		</dependency>
+		</dependency>-->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>

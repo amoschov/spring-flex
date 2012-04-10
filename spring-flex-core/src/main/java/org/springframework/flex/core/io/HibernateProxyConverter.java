@@ -16,49 +16,46 @@
 
 package org.springframework.flex.core.io;
 
-import java.util.Collections;
-import java.util.Set;
-
 import org.hibernate.Hibernate;
 import org.hibernate.proxy.HibernateProxy;
 import org.springframework.core.convert.TypeDescriptor;
 import org.springframework.core.convert.converter.GenericConverter;
-import org.springframework.core.convert.support.PropertyTypeDescriptor;
 import org.springframework.util.Assert;
+
+import java.util.Collections;
+import java.util.Set;
 
 /**
  * {@link GenericConverter} implementation that converts from {@link HibernateProxy} to {@code Object} and will either:
  * <ul>
- *     <li>Convert to null if the {@code HibernateProxy} instance is uninitialized</li>
- *     <li>Convert to the underlying proxied class if the {@code HibernateProxy} is initialized</li> 
+ * <li>Convert to null if the {@code HibernateProxy} instance is uninitialized</li>
+ * <li>Convert to the underlying proxied class if the {@code HibernateProxy} is initialized</li>
  * </ul>
  *
  * @author Jeremy Grelle
  */
 public class HibernateProxyConverter implements GenericConverter {
-    
-    /**
-     * 
-     * {@inheritDoc}
-     */
-    public Object convert(Object source, TypeDescriptor sourceType, TypeDescriptor targetType) {
-        Assert.isInstanceOf(HibernateProxy.class, source, "Expected an instance of HibernateProxy to convert");
-        Assert.isAssignable(HibernateProxy.class, sourceType.getType(), "Expected a subclass of HibernateProxy for the source type");
-        HibernateProxy proxy = (HibernateProxy) source;
-        if (targetType instanceof PropertyTypeDescriptor || targetType.getField() != null) {
-            if (!Hibernate.isInitialized(proxy)) {
-                return null;
-            }
-        }
-        return proxy.getHibernateLazyInitializer().getImplementation();
-    }
+//TODO: Revisar, pues ahora se procesan todos, y debe ser posible discriminar cuando no hacerlo.
+	/**
+	 * {@inheritDoc}
+	 */
+	public Object convert(Object source, TypeDescriptor sourceType, TypeDescriptor targetType) {
+		Assert.isInstanceOf(HibernateProxy.class, source, "Expected an instance of HibernateProxy to convert");
+		Assert.isAssignable(HibernateProxy.class, sourceType.getType(), "Expected a subclass of HibernateProxy for the source type");
+		HibernateProxy proxy = HibernateProxy.class.cast(source);
+		/*if (targetType instanceof PropertyTypeDescriptor || targetType.getField() != null) {
+			if (!Hibernate.isInitialized(proxy)) {
+				return null;
+			}
+		}*/
+		return proxy.getHibernateLazyInitializer().getImplementation();
+	}
 
-    /**
-     * 
-     * {@inheritDoc}
-     */
-    public Set<ConvertiblePair> getConvertibleTypes() {
-        return Collections.singleton(new ConvertiblePair(HibernateProxy.class, Object.class));
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	public Set<ConvertiblePair> getConvertibleTypes() {
+		return Collections.singleton(new ConvertiblePair(HibernateProxy.class, Object.class));
+	}
 
 }

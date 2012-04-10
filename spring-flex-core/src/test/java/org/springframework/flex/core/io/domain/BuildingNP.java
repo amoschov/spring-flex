@@ -2,23 +2,19 @@ package org.springframework.flex.core.io.domain;
 
 import java.util.Set;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class BuildingNP {
-	
+
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public Integer id;
-	
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	public Integer id;
+
 	@Embedded
 	public EmbeddedAddressNP address;
-	
-	@SuppressWarnings("deprecation")
-    @org.hibernate.annotations.CollectionOfElements
+
+
+	@ElementCollection
 	public Set<EmbeddedFloorNP> floors;
 }
