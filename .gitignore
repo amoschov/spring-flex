@@ -1,4 +1,6 @@
 .idea
 */target/*
+*.iml
 spring-flex-integration/src/main/webapp/WEB-INF/*
 spring-flex-samples/spring-flex-testdrive/*/target/*
+spring-flex-samples/spring-flex-testdrive/*/*.iml
