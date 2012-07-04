@@ -97,7 +97,7 @@
                         </executions>
                         <dependencies>
                             <dependency>
-                                <groupId>org.docbook</groupId>
+                                <groupId>docbook</groupId>
                                 <artifactId>docbook-xml</artifactId>
                                 <version>4.4</version>
                                 <scope>runtime</scope>
@@ -153,7 +153,7 @@
                                 </goals>
                                 <phase>package</phase>
                                 <configuration>
-                                    <javadoc:aggregate>true</javadoc:aggregate>
+                                    <!--<javadoc:aggregate>true</javadoc:aggregate>-->
                                     <breakiterator>true</breakiterator>
                                     <header>Spring BlazeDS Integration</header>
                                     <source>1.5</source>
