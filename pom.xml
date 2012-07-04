@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.springframework.flex</groupId>
     <artifactId>spring-flex</artifactId>
     <packaging>pom</packaging>
     <name>Spring BlazeDS Integration Distribution</name>
-    <version>1.5.2</version>
+    <version>1.5.2-SNAPSHOT</version>
 
     <description>
         Spring BlazeDS Integration is a top-level Spring project, and a component of the complete Spring Web stack.  This
@@ -112,7 +113,7 @@
                             <htmlCustomization>${project.basedir}/docbkx/resources/xsl/html.xsl</htmlCustomization>
                             <useExtensions>1</useExtensions>
                             <highlightSource>1</highlightSource>
-                            <highlightDefaultLanguage />
+                            <highlightDefaultLanguage/>
                             <entities>
                                 <entity>
                                     <name>version</name>
@@ -134,7 +135,10 @@
                                         <include name="**/*.jpg" />
                                     </fileset>
                                 </copy>
-                                <move file="${project.basedir}/target/site/reference/pdf/index.pdf" tofile="${project.basedir}/target/site/reference/pdf/spring-blazeds-reference.pdf" failonerror="false" />
+                                <move
+                                        file="${project.basedir}/target/site/reference/pdf/index.pdf"
+                                        tofile="${project.basedir}/target/site/reference/pdf/spring-blazeds-reference.pdf"
+                                        failonerror="false" />
                             </postProcess>
                         </configuration>
                     </plugin>
