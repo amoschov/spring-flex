@@ -1,5 +1,10 @@
-SPRING BLAZEDS INTEGRATION 1.5.2.RELEASE (November 2011)
+SPRING BLAZEDS INTEGRATION 1.5.2.CO (July 2012)
 ----------------------------------
+
+* 1.5.2.CO Supports Hibernate 4.1
+
+=========================================================
+
 http://www.springsource.org/spring-flex
 
 1. INTRODUCTION
