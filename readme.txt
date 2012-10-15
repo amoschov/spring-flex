@@ -5,9 +5,8 @@ Fork of Spring BlazeDS Integration with modifications used by Codeoscopic S.A.
 
 Releases:
 ---------
-# 1.5.2.CO (July 2012)
-
-    * 1.5.2.CO Supports Hibernate 4.1
+1.5.2.CO (July 2012)
+    -1.5.2.CO Supports Hibernate 4.1
 
 
 
