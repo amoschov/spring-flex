@@ -20,6 +20,7 @@ import org.hibernate.Hibernate;
 import org.hibernate.proxy.HibernateProxy;
 import org.springframework.core.convert.TypeDescriptor;
 import org.springframework.core.convert.converter.GenericConverter;
+//import org.springframework.core.convert.support.PropertyTypeDescriptor;
 import org.springframework.util.Assert;
 
 import java.util.Collections;
